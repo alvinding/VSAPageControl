@@ -1,3 +1,3 @@
 # VSAPageControl
 效果图：
-![image](https://github.com/alvinding/VSAPageControl/edit/master/Demo/testGif.gif)
+![image](https://github.com/alvinding/VSAPageControl/raw/master/Demo/testGif.gif)
