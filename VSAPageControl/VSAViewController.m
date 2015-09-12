@@ -9,6 +9,7 @@
 #import "VSAViewController.h"
 
 #define interDis 20
+#define pageCount 4
 
 @interface VSAViewController () <UIScrollViewDelegate>
 @property (nonatomic, weak) UIView *moveView;
@@ -23,7 +24,7 @@
     scrollView.frame = CGRectMake(0, 0, 375, 500);
     scrollView.backgroundColor = [UIColor whiteColor];
     
-    for (int i=0; i<3; i++) {
+    for (int i=0; i<pageCount; i++) {
         UIView *view = [[UIView alloc] init];
         UIColor *color = [UIColor lightGrayColor];
 
@@ -33,14 +34,14 @@
         view.frame = CGRectMake(i * scrollView.bounds.size.width, 0, scrollView.bounds.size.width, scrollView.bounds.size.height);
     }
     
-    scrollView.contentSize = CGSizeMake(3 * scrollView.bounds.size.width, scrollView.bounds.size.height);
+    scrollView.contentSize = CGSizeMake(pageCount * scrollView.bounds.size.width, scrollView.bounds.size.height);
     scrollView.delegate = self;
     scrollView.pagingEnabled = YES;
     
     [self.view addSubview:scrollView];
     
-    CGFloat startX = (self.view.bounds.size.width - interDis * 6) / 2;
-    for (int i = 0; i<6; i++) {
+    CGFloat startX = (self.view.bounds.size.width - interDis * (pageCount * 2 -1)) / 2;
+    for (int i = 0; i<pageCount * 2; i++) {
         UIView *view;
         if (i % 2 == 0) {
             view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
